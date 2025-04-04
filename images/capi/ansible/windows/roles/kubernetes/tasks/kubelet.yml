@@ -45,7 +45,8 @@
       containerd: containerd
       default: containerd
     runtime_service: "{{ dependencies[runtime] | default(dependencies['containerd']) }}"
-
+  when: windows_service_manager == "nssm"
+  
 - name: Add firewall rule for kubelet
   community.windows.win_firewall_rule:
     name: kubelet

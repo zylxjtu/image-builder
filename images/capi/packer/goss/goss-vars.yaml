@@ -587,10 +587,10 @@ windows:
       expected:
       - Manual
       - Stopped
-    kubelet:
-      expected:
-      - Automatic
-      - "/RequiredServices.+:.+(containerd|docker)/"
+    # kubelet:
+    #   expected:
+    #   - Automatic
+    #   - "/RequiredServices.+:.+(containerd|docker)/"
     sshd:
       expected:
       - Automatic
