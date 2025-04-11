@@ -14,6 +14,7 @@
 
 # From https://github.com/kubernetes-sigs/sig-windows-tools/blob/master/kubeadm/scripts/PrepareNode.ps1
 # Does not support kubeadm KUBELET_KUBEADM_ARGS which is used by Cluster API to pass extra user args
+# Need to keey sync with StartKubelet.ps1
 $FileContent = Get-Content -Path "$env:SYSTEMDRIVE/var/lib/kubelet/kubeadm-flags.env"
 $kubeAdmArgs = $FileContent.TrimStart('KUBELET_KUBEADM_ARGS=').Trim('"')
 
