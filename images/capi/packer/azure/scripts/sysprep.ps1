@@ -25,8 +25,6 @@ if( Test-Path $Env:SystemRoot\system32\Sysprep\unattend.xml ) {
   Remove-Item $Env:SystemRoot\system32\Sysprep\unattend.xml -Force
 }
 
-& $Env:SystemRoot\System32\Sysprep\Sysprep.exe /oobe /generalize /mode:vm /quit /quiet
-
 $unattendedXml = "$ENV:ProgramFiles\Cloudbase Solutions\Cloudbase-Init\conf\Unattend.xml"
 $FileExists = Test-Path $unattendedXml
 If ($FileExists -eq $True) {
