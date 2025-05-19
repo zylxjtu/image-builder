@@ -52,7 +52,7 @@ fi
 
 packer validate -syntax-only $PACKER_FILE || exit 1
 
-az sig create --resource-group ${RESOURCE_GROUP_NAME} --gallery-name ${GALLERY_NAME}
+az sig create --resource-group ${RESOURCE_GROUP_NAME} --permissions Community --publisher-uri "https://example.com" --publisher-email "contact@example.com" --eula "https://example.com/eula" --public-name-prefix "wcctpub" --gallery-name ${GALLERY_NAME}
 
 SECURITY_TYPE_CVM_SUPPORTED_FEATURE="SecurityType=ConfidentialVmSupported"
 
